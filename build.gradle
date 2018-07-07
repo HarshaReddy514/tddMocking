@@ -9,7 +9,7 @@ repositories {
 jacoco {
  toolVersion = "0.8.1"
  reportsDir = file("$buildDir/ReminderJacocoReportDir")
-  
+
 }
 
 jacocoTestReport {
@@ -41,10 +41,14 @@ jacocoTestCoverageVerification {
  	}
 }
 
-
+test {
+jacoco {
+excludes = ['*demo/**']
+}
+}
 
 dependencies {
-  
+
   testCompile group: 'junit', name: 'junit', version: '4.12'
   testCompile group: 'org.powermock', name: 'powermock-module-junit4', version: '2.0.0-beta.5'
   testCompile group: 'org.powermock', name: 'powermock-api-mockito2', version: '2.0.0-beta.5'
@@ -54,7 +58,7 @@ test {
 	testLogging.showStandardStreams = true
  }
 
-   
+
   project.ext.jacocoOfflineSourceSets = [ 'main' ]
   task doJacocoOfflineInstrumentation(dependsOn: [ classes, project.configurations.jacocoAnt ]) {
       inputs.files classes.outputs.files
@@ -91,4 +95,3 @@ test {
 
 check.dependsOn doJacocoOfflineInstrumentation
 test.finalizedBy jacocoTestReport
-
