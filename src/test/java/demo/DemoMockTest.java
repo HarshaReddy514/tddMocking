@@ -14,7 +14,7 @@ import org.powermock.modules.junit4.PowerMockRunner;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(DemoMock.class)
-public class DemoMockTest1 {
+public class DemoMockTest {
 
 	 @Test
 	  public void mockPrivateTest() throws Exception {

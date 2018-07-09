@@ -91,7 +91,5 @@ test {
       }
   }
 
-//test.dependsOn doJacocoOfflineInstrumentation
-
-check.dependsOn doJacocoOfflineInstrumentation
+test.dependsOn doJacocoOfflineInstrumentation
 test.finalizedBy jacocoTestReport

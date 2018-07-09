@@ -23,7 +23,7 @@ import org.powermock.reflect.Whitebox;
  */
 @RunWith(PowerMockRunner.class)
 @SuppressStaticInitializationFor({"demo.DemoClassWithStaticContent"})
-public class DemoClassWithStaticContentTest1 {
+public class DemoClassWithStaticContentTest {
 
 	@BeforeClass
 	public static void setUp(){
