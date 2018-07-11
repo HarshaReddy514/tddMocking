@@ -1,6 +1,5 @@
 package demo;
 
-import javafx.beans.binding.When;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;

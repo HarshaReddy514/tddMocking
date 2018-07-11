@@ -13,10 +13,10 @@ public class DemoClassWithStaticContent {
 
 	private static DemoMock demoMockObject = new DemoMock();
 	private static Logger logger = Logger.getLogger(DemoClassWithStaticContent.class.getPackage().getName());
-	
+
 	public static String sampleMethod(String value){
 		logger.info(value);
 		return value;
 	}
-	
+
 }

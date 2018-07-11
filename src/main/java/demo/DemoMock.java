@@ -12,11 +12,11 @@ public class DemoMock {
 	
 	public String callingPublicMethodInside(String input) {
 		System.out.println(input);
-		
 		return iampublic(input);
 	
 	}
-	
+
+   
 	private String  iamPrivate(String  input) {
 		input = input +" called private ";
 		System.out.println("***** "+input);
