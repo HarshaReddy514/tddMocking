@@ -18,7 +18,6 @@ import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
-import junitx.util.PrivateAccessor;
 
 import static org.mockito.Mockito.*;
 
@@ -31,21 +30,21 @@ public class DemoMockTest {
 
 	 @Test
 	 public void mockPrivateTest() throws Exception {
-		 
+
 		 DemoMock demoMockSpy = spy(new DemoMock());
 		 //when(demoMockSpy,"iamPrivate","pravanjan").thenReturn("calling");
 		 PowerMockito.doReturn("calling").when(demoMockSpy, "iamPrivate","pravanjan");
 		 assertEquals(demoMockSpy.callingPrivateInsideClass("pravanjan"),"calling");
 	}
-	 
+
 	 @Test
 	 public void mockPublicTest() throws Exception {
 		 DemoMock demoMockSpy = spy(new DemoMock());
 		 PowerMockito.doReturn("calling public").when(demoMockSpy).iampublic(anyString());
 		 assertEquals(demoMockSpy.callingPublicMethodInside("pravanjan"),"calling public");
 	  }
-	 
-	 
+
+
 	 @Test
 	 public void iamPrivateTest() throws Exception {
 		 DemoMock demo = new DemoMock();
@@ -53,10 +52,10 @@ public class DemoMockTest {
 		 privateMethod.setAccessible(true);
 		 assertEquals(privateMethod.invoke(demo,"hi"),"hi called private ");
 
-		 
-		
+
+
 	  }
 
-	
+
 
 }
